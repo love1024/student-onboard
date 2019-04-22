@@ -1,0 +1,73 @@
+@import 'colors.scss';
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: lighten($fresh, 40%);
+}
+
+.create-new {
+  position: absolute;
+  top:10px;
+  right: 20px;
+  background-color: gray;
+}
+
+.category {
+  position: absolute;
+  top:10px;
+  right: 400px;
+}
+
+.category select {
+    height: 35px;
+}
+
+.search {
+  position: absolute;
+  top:10px;
+  right: 200px;
+}
+
+.search input {
+  height: 35px;
+}
+
+.overlay {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.confirmation-box {
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  background-color: white;
+  top: calc(50% - 90px);
+  left: calc(50% - 150px);
+  padding: 20px;
+}
+
+.confirmation-info {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.cancel-button {
+  background-color: $sunshine;
+}
+
+.delete-button {
+  background-color: $lava;
+}
+
+.actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}

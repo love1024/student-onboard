@@ -1,0 +1,26 @@
+// @import "assets/styles/colors.scss";
+@import 'colors.scss';
+
+header {
+  width: 100%;
+  min-height: 8vh;
+  background-color: $fresh;
+  position: relative;
+}
+
+.heading {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  left: 80px;
+  top: 10px;
+}
+
+.user {
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  color: white;
+  font-size: 18px;
+}

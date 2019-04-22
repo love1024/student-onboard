@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/colors.scss';
+@import 'assets/styles/common.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+  box-sizing: border-box;
+}
+
+  button {
+    padding: 10px;
+    border: 0;
+    color: white;
+    margin-right: 16px;
+    font-weight: bold;
+  }

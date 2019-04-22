@@ -1,0 +1,11 @@
+<div class="login-container">
+  <form [formGroup]="loginForm">
+    <input type="text" class="fs2" formControlName="username" placeholder="Username"/>
+    <input type="password" class="fs2" formControlName="password" autocomplete="off" placeholder="Password"/>
+
+    <div class="mt4">
+      <button type="button" class="login-button hover" (click)="login()">Login</button>
+      <button type="submit" class="reset-button hover">Reset</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<section>
+  <button (click)="createNewStudent()" class="create-new" *ngIf="!createNew">Create new</button>
+  <div class="category" *ngIf="!createNew">
+    <select (change)="onCategoryChange()" [(ngModel)]="category">
+      <option value="all">All</option>
+      <option value="international">International</option>
+      <option value="domestic">Domestic</option>
+    </select>
+  </div>
+  <div class="search" *ngIf="!createNew">
+    <input type="text" placeholder="Search..." [(ngModel)]="search" (input)="onSearchChange($event)"/>
+  </div>
+  <so-students-new *ngIf="createNew"></so-students-new>
+  <so-student-list *ngIf="!createNew"></so-student-list>
+</section>
+<div class="overlay" *ngIf="showDeleteConfirmation">
+  <div class="confirmation-box">
+    <span class="confirmation-info">Please confirm</span>
+    <div class="actions">
+      <button type="button" class="cancel-button hover" (click)="onDeleteCancel()">Cancel</button>
+      <button type="submit" class="delete-button hover" (click)="onDelete()">Delete</button>
+    </div>
+  </div>
+</div>

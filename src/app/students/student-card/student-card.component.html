@@ -1,0 +1,28 @@
+<div class="width100 card">
+  <div class="info">
+    <span class="label">Name:</span>
+    <span class="data">{{student?.name}}</span></div>
+  <div class="info">
+    <span class="label">Category</span>
+    <span class="data">{{student?.category}}</span> 
+  </div>
+  <div class="info">
+    <span class="label">DOB:</span>
+    <span class="data">{{student?.dob | date:'dd-MM-yyyy'}}</span>  
+  </div>
+  <div class="info">
+    <span class="label">Father's Name</span>
+    <span class="data">{{student?.fatherName}}</span>
+  </div>
+  <div class="info">
+    <span class="label">Mother's Name</span>
+    <span class="data">{{student?.motherName}}</span>
+  </div>
+  
+  <div class="last-score">{{student?.lastClassScore}}%</div>
+  <div class="actions">
+    <button type="button" class="edit hover" (click)="edit()">Edit</button>
+    <button type="button" class="view hover" (click)="view()">View</button>
+    <button type="button" class="delete hover" (click)="delete()">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<section class="width100 p3">
+  <form [formGroup]="studentForm"
+    class="p3">
+    <div class="field">
+      <label class="label">Student Name</label>
+      <input type="text"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="name"
+        placeholder="Name"
+        class="width100" />
+      <span class="error"
+        *ngIf="studentForm.get('name').hasError('required') && studentForm.get('name').dirty">Field is required</span>
+    </div>
+    <div class="field">
+      <label class="label">Category</label>
+      <select class="width100"
+        (change)="onCategoryChange()"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="category">
+        <option value="international">International</option>
+        <option value="domestic">Domestic</option>
+      </select>
+      <span class="error"
+        *ngIf="studentForm.get('category').hasError('required') && studentForm.get('category').dirty">Field is required</span>
+    </div>
+    <div class="field">
+      <label class="label">Documents</label>
+      <div *ngFor="let document of documentList" class="display-block">
+        <label [for]="document.key">{{document.name}}</label>
+        <input [id]="document.key"
+          [attr.disabled]="viewOnly ? '': null"
+          [formControlName]="document.key"
+          type="checkbox"
+          class="checkbox" />
+        <span class="error"
+          *ngIf="studentForm.get(document.key).value == false && document.required">Field is
+          required</span>
+      </div>
+   </div>
+    <div class="field">
+      <label class="label"
+        for="dob">Date of Birth</label>
+      <input type="date"
+        id="dob"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="dob"
+        placeholder="DOB"
+        class="width100" />
+       <span class="error"
+          *ngIf="studentForm.get('dob').hasError('required') && studentForm.get('dob').dirty">Field is
+          required</span>
+    </div>
+    <div class="field">
+      <label class="label"
+        for="fatherName">Father's Name</label>
+      <input type="text"
+        id="fatherName"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="fatherName"
+        placeholder="Father's Name"
+        class="width100" />
+       <span class="error"
+          *ngIf="studentForm.get('fatherName').hasError('required') && studentForm.get('fatherName').dirty">Field is
+          required</span>
+    </div>
+    <div class="field">
+      <label class="label"
+        for="motherName">Mother's Name</label>
+      <input type="text"
+        id="motherName"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="motherName"
+        placeholder="Mother's Name"
+        class="width100" />
+       <span class="error"
+          *ngIf="studentForm.get('motherName').hasError('required') && studentForm.get('motherName').dirty">Field is
+          required</span>
+    </div>
+    <div class="field">
+      <label class="label"
+        for="lastClassScore">Last Class Score</label>
+      <input type="number"
+        id="lastClassScore"
+        [attr.disabled]="viewOnly ? '': null"
+        formControlName="lastClassScore"
+        placeholder="%(marks)"
+        class="width100" />
+       <span class="error"
+          *ngIf="studentForm.get('lastClassScore').hasError('required') && studentForm.get('lastClassScore').dirty">Field is
+          required</span>
+    </div>
+
+    <button [hidden]="viewOnly"
+      type="submit"
+      class="onboard-button hover"
+      (click)="submit()">Onboard</button>
+    <button type="submit"
+      class="cancel-button hover"
+      (click)="cancel()">Cancel</button>
+  </form>
+</section>

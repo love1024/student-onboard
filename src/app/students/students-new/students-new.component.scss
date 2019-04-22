@@ -1,0 +1,48 @@
+@import 'colors.scss';
+
+form {
+  background-color: white;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.label {
+  font-weight: bold;
+  color: gray;
+}
+
+input , select{
+  margin: 4px 0 16px 0;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid gray;
+}
+
+.checkbox {
+  margin-left: 8px;
+}
+
+.field {
+  margin-top: 16px;
+}
+
+  button {
+    padding: 10px;
+    border: 0;
+    color: white;
+    margin-right: 16px;
+    font-weight: bold;
+  }
+
+  .onboard-button {
+    background-color: $sunshine;
+  }
+
+  .cancel-button {
+    background-color: $lava;
+  }
+
+  .error {
+    font-size: 14px;
+    color: red;
+  }
